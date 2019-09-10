@@ -44,7 +44,3 @@ int toDecimal (char numeroDeOtroSistema[],int baseDeSistema,char numeros[]){
 	}
 	return sumatoria;
 }
-
-
-//Conversión de decimal a binario
-
