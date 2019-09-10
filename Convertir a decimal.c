@@ -72,7 +72,7 @@ int validar(int k,int baseDeSistema){
 //Convertir de decimal a cualquier base
 int decimalToAnyBase(char numeroDecimal[], int baseDeSistema){ //Se ingresa número decimal y la base a la que se desea convertir
 	char residuos[];
-	for (int i=0;numeroDeOtroSistema[i]!='\0';i++){
+	for (int i=0;numeroDecimal[i]!='\0';i++){
 		//Detecta el largo de la cadena y lo guarda en i
 	}
 	i--; //Se le resta 1 a i para ajustar la cadena
@@ -81,6 +81,6 @@ int decimalToAnyBase(char numeroDecimal[], int baseDeSistema){ //Se ingresa núm
 	residuos[j] = numeroEntrada%baseDeSistema //guarda el residuo de cada division en una cadena
 	numeroEntrada = numeroEntrada/baseDeSistema; //El resultado de la división se vuelve a dividir por la base cada que itera el ciclo
 	}
-	for(int k=i; k=0; k--){	//Ciclo que va disminuyendo (el 5 debería ser el largo de la cadena)
+	for(int k=i; k=0; k--){	//Ciclo que va disminuyendo hasta llegar al largo de la cadena (i=largo de la cadena)
 		printf(residuos[k] + " "); //Se imprime cada residuo en orden inverso con un espacio para distinguir cada dígito
 }
