@@ -4,6 +4,7 @@
 
 int toDecimal (char numeroDeOtroSistema[],int baseDeSistema,char numeros[]);
 int convertirCharANumero(char caracter,char numeros[]);
+int validar(int k,int baseDeSistema);
 
 int main(int argc, char *argv[]) {
 
@@ -12,6 +13,7 @@ int main(int argc, char *argv[]) {
 	int res = 0;
 	char numeroEntrada[20];
 	int nuevoDecimal;
+<<<<<<< HEAD
 	int baseAConvertir;
 
 	while(res!=2){
@@ -29,6 +31,12 @@ int main(int argc, char *argv[]) {
 		printf("1.Continuar -- 2.Salir");
 		scanf("%d",&res);
 	}
+=======
+	nuevoDecimal=toDecimal(numeroEntrada,base,numeros);
+	printf("Valor decimal: ");
+	printf("%d",nuevoDecimal);
+	
+>>>>>>> 4e3e04ab5e11ba4e1ca47cbdd43b0ac8efd1bc35
 	return 0;
 }
 
@@ -43,8 +51,7 @@ int toDecimal (char numeroDeOtroSistema[],int baseDeSistema,char numeros[]){
 	int sumatoria=0;
 	for (j=i;j>=0;j--){
 		k=convertirCharANumero(numeroDeOtroSistema[j],numeros);
-		if (k<0 || k>=baseDeSistema){
-			printf("Uno de los digitos ingresados no es valido!!!\n");
+		if (validar(k,baseDeSistema)==1){
 			break;
 		}
 		elevado=k*pow(baseDeSistema,i-j);
@@ -60,4 +67,13 @@ int convertirCharANumero(char caracter,char numeros[]){
 		//Solo guarda la k
 	}
 	return k;
+}
+
+int validar(int k,int baseDeSistema){
+	int flag=0;
+	if (k<0 || k>=baseDeSistema){
+		printf("Uno de los digitos ingresados no es valido!!!\n");
+		flag=1;
+	}
+	return flag;
 }
