@@ -18,14 +18,14 @@ int main(int argc, char *argv[]) {
 		printf("------CONVERTIDOR DE NUMEROS------\n");
 		printf("Ingresa el numero: ");
 		scanf("%s",numeroEntrada);
-		printf("Ingresa la base del numero: ");
+		printf(" escrito en base: ");
 		scanf("%d",&base);
-		printf("Ingrese en que base desea convertirlo: ");
+		printf("\nIngrese en que base desea convertirlo: ");
 		scanf("%d", &baseAConvertir)
 
 		nuevoDecimal=toDecimal(numeroEntrada,base,numeros);
 
-		printf("El numero %d base %d es %d: ", numeroEntrada, baseAConvertir);
+		printf("\nEl numero %d base %d es %d: ", numeroEntrada, baseAConvertir);
 		printf("1.Continuar -- 2.Salir");
 		scanf("%d",&res);
 	}
