@@ -3,6 +3,7 @@
 #include <math.h>
 
 int toDecimal (char numeroDeOtroSistema[],int baseDeSistema,char numeros[]);
+int convertirCharANumero(char caracter,char numeros[]);
 
 int main(int argc, char *argv[]) {
 	
@@ -32,9 +33,7 @@ int toDecimal (char numeroDeOtroSistema[],int baseDeSistema,char numeros[]){
 	int elevado=0;
 	int sumatoria=0;
 	for (j=i;j>=0;j--){
-		for (k=0;numeros[k]!=numeroDeOtroSistema[j];k++){
-			//Solo guarda la k
-		}
+		k=convertirCharANumero(numeroDeOtroSistema[j],numeros);
 		if (k<0 || k>=baseDeSistema){
 			printf("Uno de los digitos ingresados no es valido!!!\n");
 			break;
@@ -43,4 +42,12 @@ int toDecimal (char numeroDeOtroSistema[],int baseDeSistema,char numeros[]){
 		sumatoria=sumatoria+elevado;
 	}
 	return sumatoria;
+}
+
+int convertirCharANumero(char caracter,char numeros[]){
+	int k;
+	for (k=0;numeros[k]!=caracter;k++){
+		//Solo guarda la k
+	}
+	return k;	
 }
