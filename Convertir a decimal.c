@@ -76,9 +76,9 @@ int decimalToAnyBase(char numeroDecimal[], int baseDeSistema){ //Se ingresa núm
 	}
 	i--; //Se le resta 1 a i para ajustar la cadena
 	for(int j=0; numeroEntrada==0; j++){	//Ciclo que itera hasta que una división dé como resultado 0 (fin de las divisiones) 
-	char residuos[i]; //se crea el array con el largo de la cadenan (*no sé si es char o int ya que ahí guardará números)
-	residuos[j] = numeroEntrada%baseDeSistema //guarda el residuo de cada division en una cadena
-	numeroEntrada = numeroEntrada/baseDeSistema; //El resultado de la división se vuelve a dividir por la base cada que itera el ciclo
+		char residuos[i]; //se crea el array con el largo de la cadenan (*no sé si es char o int ya que ahí guardará números)
+		residuos[j] = numeroEntrada%baseDeSistema //guarda el residuo de cada division en una cadena
+		numeroEntrada = numeroEntrada/baseDeSistema; //El resultado de la división se vuelve a dividir por la base cada que itera el ciclo
 	}
 	for(int k=i; k=0; k--){	//Ciclo que va disminuyendo hasta llegar al largo de la cadena (i=largo de la cadena)
 		printf(residuos[k] + " "); //Se imprime cada residuo en orden inverso con un espacio para distinguir cada dígito
