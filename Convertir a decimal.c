@@ -6,20 +6,29 @@ int toDecimal (char numeroDeOtroSistema[],int baseDeSistema,char numeros[]);
 int convertirCharANumero(char caracter,char numeros[]);
 
 int main(int argc, char *argv[]) {
-	
-	
+
 	char numeros[16]= {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
 	int base;
-	printf("Ingresa la base del numero: \n");
-	scanf("%d",&base);
+	int res = 0;
 	char numeroEntrada[20];
-	printf("Ingresa el numero en su respectiva base: \n");
-	scanf("%s",numeroEntrada);
 	int nuevoDecimal;
-	nuevoDecimal=toDecimal(numeroEntrada,base,numeros);
-	printf("Suma: ");
-	printf("%d",nuevoDecimal);
-	
+	int baseAConvertir;
+
+	while(res!=2){
+		printf("------CONVERTIDOR DE NUMEROS------\n");
+		printf("Ingresa el numero: ");
+		scanf("%s",numeroEntrada);
+		printf("Ingresa la base del numero: ");
+		scanf("%d",&base);
+		printf("Ingrese en que base desea convertirlo: ");
+		scanf("%d", &baseAConvertir)
+
+		nuevoDecimal=toDecimal(numeroEntrada,base,numeros);
+
+		printf("El numero %d base %d es %d: ", numeroEntrada, baseAConvertir);
+		printf("1.Continuar -- 2.Salir");
+		scanf("%d",&res);
+	}
 	return 0;
 }
 
@@ -44,10 +53,11 @@ int toDecimal (char numeroDeOtroSistema[],int baseDeSistema,char numeros[]){
 	return sumatoria;
 }
 
+//Funcion para convertir un char a entero
 int convertirCharANumero(char caracter,char numeros[]){
 	int k;
 	for (k=0;numeros[k]!=caracter;k++){
 		//Solo guarda la k
 	}
-	return k;	
+	return k;
 }
