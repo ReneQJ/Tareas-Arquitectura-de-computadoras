@@ -72,10 +72,10 @@ int validar(int k,int baseDeSistema){
 //Convertir de decimal a cualquier base
 int decimalToAnyBase(int numeroEntrada, int base){ //Se ingresa número decimal y la base a la que se desea convertir
 	for(int i=0; numeroEntrada==0; i++){	//Ciclo que itera hasta que una división dé como resultado 0 (fin de las divisiones) 
-	int residuos[5]; //Cambiar el 5 por el largo de la cadena
+	int residuos[5]; //Cambiar el 5 por el largo de la cadena 
 	residuos[i] = numeroEntrada%base //guarda el residuo de cada division en una cadena
 	numeroEntrada = numeroEntrada/base; //El resultado de la división se vuelve a dividir por la base cada que itera el ciclo
 	}
-	for(int j=5; j=0; j--){	//Ciclo que va disminuyendo
+	for(int j=5; j=0; j--){	//Ciclo que va disminuyendo (el 5 debería ser el largo de la cadena)
 		printf(residuos[j] + " "); //Se imprime cada residuo en orden inverso con un espacio para distinguir cada dígito
 }
