@@ -8,8 +8,11 @@ int main(int argc, char *argv[]) {
 	
 	
 	char numeros[16]= {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
-	int base=16;
+	int base;
+	printf("Ingresa la base del numero: \n");
+	scanf("%d",&base);
 	char numeroEntrada[20];
+	printf("Ingresa el numero en su respectiva base: \n");
 	scanf("%s",numeroEntrada);
 	int nuevoDecimal;
 	nuevoDecimal=toDecimal(numeroEntrada,base,numeros);
@@ -24,25 +27,20 @@ int toDecimal (char numeroDeOtroSistema[],int baseDeSistema,char numeros[]){
 	int i,j,k;
 	for (i=0;numeroDeOtroSistema[i]!='\0';i++){
 		//Solo guarda la i
-		printf("\nPasa por aqui");
 	}
 	i--;
 	int elevado=0;
 	int sumatoria=0;
 	for (j=i;j>=0;j--){
-		printf("%c",numeroDeOtroSistema[j]);
 		for (k=0;numeros[k]!=numeroDeOtroSistema[j];k++){
 			//Solo guarda la k
-			printf("\nBusca en el vector");
 		}
-		int valorDelNumero=k;
-		printf("El valor de k: ");
-		printf("%d",k);
-		elevado=valorDelNumero*pow(baseDeSistema,i-j);
-		printf("Elevado: ");
-		printf("%d",elevado);
+		if (k<0 || k>=baseDeSistema){
+			printf("Uno de los digitos ingresados no es valido!!!\n");
+			break;
+		}
+		elevado=k*pow(baseDeSistema,i-j);
 		sumatoria=sumatoria+elevado;
-		printf("\n%d",sumatoria);
 	}
 	return sumatoria;
 }
