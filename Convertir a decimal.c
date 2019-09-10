@@ -77,5 +77,5 @@ int decimalToAnyBase(int numeroEntrada, int base){ //Se ingresa número decimal 
 	numeroEntrada = numeroEntrada/base; //El resultado de la división se vuelve a dividir por la base cada que itera el ciclo
 	}
 	for(int j=5; j=0; j--){	//Ciclo que va disminuyendo
-		printf(residuos[j] + " "); //Se imprime cada residuo en orden inverso
+		printf(residuos[j] + " "); //Se imprime cada residuo en orden inverso con un espacio para distinguir cada dígito
 }
